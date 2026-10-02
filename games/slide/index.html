@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e5f3ed">
+  <meta name="description" content="奶蛙的八盘冰面滑行谜题。收点心、算路线，还有两次笑到坐地的急刹。">
+  <title>滑到哪算哪 · 奶蛙冰盘</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="engine.js"></script><script defer src="levels.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<main class="shop">
+  <aside class="shop-sign">
+    <span class="eyebrow">NAIWA ICE CLUB</span>
+    <h1>滑到哪<span>算哪<span class="dot">。</span></span></h1>
+    <p class="tagline">脑子先走，屁股再走。</p>
+    <div class="hero-art"><div class="halo"></div><img src="assets/naiwa-slide.webp" alt="坐在冰面上，一脸淡定的奶蛙"><span class="sticker">冷饮店<br><b>冰盘限定</b></span></div>
+    <p class="aside-rule">收齐点心，再停在出口。<br>一滑到底，撞到冰块才会停。</p>
+    <div class="legend"><span><i class="legend-snack"></i>点心</span><span><i class="legend-thin"></i>薄冰 · 离开即碎</span></div>
+    <p class="micro">8 盘小谜题 · 不计时 · 随时撤销</p>
+  </aside>
+  <section class="game" aria-label="滑到哪算哪游戏">
+    <header class="game-top"><button id="levels-button" class="level-label" aria-label="选择关卡"><span id="level-number">01 / 08</span><strong id="level-title">先滑起来</strong><span class="chevron">⌄</span></button><button id="pause-button" class="icon-button" aria-label="暂停游戏" title="暂停 (Esc)">Ⅱ</button></header>
+    <div class="stats"><span>点心 <b id="snack-count">0 / 2</b></span><span>步数 <b id="move-count">0</b></span><span class="brake-stat">急刹 <b id="brake-count">● ●</b></span></div>
+    <div class="tray" id="tray"><canvas id="board" width="700" height="700" tabindex="0" aria-label="冰盘棋盘。方向键或 W A S D 滑行，空格选择急刹，Z 撤销，R 重开。"></canvas><div class="tray-label" aria-hidden="true">KEEP IT COOL</div></div>
+    <div class="message" id="message" role="status" aria-live="polite">收齐点心，停在出口。</div>
+    <div id="brake-picker" class="brake-picker" hidden><span>停在第几格？</span><div id="stop-options"></div><button id="confirm-stop" class="small-button">确定停靠 ↵</button></div>
+    <div class="control-area">
+      <div class="utility"><button id="brake-button" class="brake-button" aria-pressed="false"><span>笑到坐地</span><small>急刹 · 空格</small></button><div class="secondary"><button id="undo-button" title="撤销 (Z)">↶ 撤销</button><button id="restart-button" title="重开 (R)">↺ 重开</button></div></div>
+      <div class="dpad" aria-label="方向控制"><button data-dir="U" class="up" aria-label="向上滑">↑</button><button data-dir="L" class="left" aria-label="向左滑">←</button><span class="dpad-center" aria-hidden="true">✧</span><button data-dir="R" class="right" aria-label="向右滑">→</button><button data-dir="D" class="down" aria-label="向下滑">↓</button></div>
+    </div>
+    <footer class="game-footer"><span class="desktop-help">方向键 / WASD 滑行</span><span class="mobile-help">冰盘上轻扫，或点方向键</span><button id="hint-button">给个提示</button><button id="help-button" aria-label="查看玩法">?</button></footer>
+  </section>
+</main>
+<dialog id="modal" aria-labelledby="modal-title"><div class="modal-content" id="modal-content"></div></dialog>
+<script>window.addEventListener('error',function(){var m=document.getElementById('message');if(m)m.textContent='加载遇到问题，请重新打开游戏；静态包需要保留全部文件。';});</script>
+</body></html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#172936"><meta name="description" content="奶蛙在图书馆憋住笑，把借书卡送到出口。四间安静得不太对劲的图书馆，三种遮掩，一次荒诞潜行。">
+  <title>奶蛙，图书馆闭麦</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <header class="masthead"><a class="brand" href="./index.html" aria-label="返回游戏首页"><span class="brand-mark">N</span><span>奶蛙，图书馆闭麦<small>安静是一种技术活。</small></span></a><div class="top-actions"><span class="silent-label">全程静音可玩</span><button id="help" class="icon-button" aria-label="查看玩法">?</button><button id="pause" class="icon-button" aria-label="暂停游戏">Ⅱ</button></div></header>
+  <section class="hud" aria-label="游戏状态">
+    <div class="room-info"><span id="room-index">第一间 / 04</span><strong id="room-name">借阅前厅</strong></div>
+    <div class="meter-block"><div class="meter-label"><span>笑意</span><b id="laugh-value">0%</b></div><div class="meter laugh-meter" role="meter" aria-label="笑意" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="laugh-fill"></span></div></div>
+    <div class="meter-block"><div class="meter-label"><span>警觉</span><b id="alert-value">0%</b></div><div class="meter alert-meter" role="meter" aria-label="巡视员警觉" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="alert-fill"></span></div></div>
+    <div class="card-count"><span>借书卡</span><strong id="card-value">0 / 3</strong></div>
+  </section>
+  <section id="stage" aria-label="图书馆游戏场地">
+    <canvas id="game" width="900" height="600" tabindex="0" aria-label="点击地面走动，也可用方向键或 WASD 移动。按顺序取三张卡片，再去出口。"></canvas>
+    <div id="overlay" class="overlay">
+      <section id="dialog" class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"></section>
+    </div>
+    <div id="burst-warning" class="burst-warning" hidden>快憋不住了！<span>找金色噪声圈，或远离视线再放声</span></div>
+  </section>
+  <div class="live-strip"><span id="context-icon">✦</span><p id="context">点地面移动，拿到三张借书卡后前往出口。</p><span id="clock">0:00</span></div>
+  <section class="controls" aria-label="游戏操作">
+    <div class="dpad" aria-label="触屏方向区"><button data-dir="up" aria-label="向上走">↑</button><button data-dir="left" aria-label="向左走">←</button><button data-dir="down" aria-label="向下走">↓</button><button data-dir="right" aria-label="向右走">→</button></div>
+    <button id="hold" class="action hold" aria-pressed="false"><strong>憋住笑</strong><small>点按锁定 · 长按临时</small></button>
+    <button id="laugh" class="action release"><strong>放声笑</strong><small>清空笑意 · 吸引巡视员</small></button>
+    <button id="stop" class="stop" aria-label="停下脚步">停下</button>
+  </section>
+  <footer><span>移动 WASD / 方向键 · 憋笑 Shift · 放声 Space · 暂停 Esc</span><button id="credits">素材说明</button></footer>
+</main>
+<noscript>请开启 JavaScript 后进入图书馆。</noscript>
+<script src="simulation.js"></script><script src="render.js"></script><script src="game.js"></script>
+</body></html>

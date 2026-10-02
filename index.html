@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff9e9">
+  <meta name="description" content="奶蛙游乐场。八款独立小游戏，选一款，开一局。">
+  <title>奶蛙游乐场 · 选一款，开一局</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./hub.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#games">跳到游戏</a>
+  <div class="page-shell">
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="奶蛙游乐场首页"><span class="brand-mark" aria-hidden="true">✳</span> 奶蛙游乐场</a>
+      <a class="header-link" href="#games">游戏大厅 <span aria-hidden="true">↘</span></a>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="tiny-dot" aria-hidden="true"></span> 今天也要玩得开心</p>
+          <h1 id="hero-title">奶蛙<span class="title-bottom">游乐场<span class="title-star" aria-hidden="true">✳</span></span></h1>
+          <p class="hero-line">没什么大事。<br>就是想再来一局。</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#games">选一个开玩 <span aria-hidden="true">↘</span></a>
+            <button class="random-button" id="random-game" type="button" disabled aria-label="随机选择一款已开放游戏">随便来一局 <span aria-hidden="true">⤨</span></button>
+          </div>
+          <p class="hero-note">不用下载 <span aria-hidden="true">·</span> 点开就玩</p>
+        </div>
+        <div class="hero-art">
+          <div class="sun-disc" aria-hidden="true"></div>
+          <span class="art-doodle doodle-one" aria-hidden="true">✦</span>
+          <span class="art-doodle doodle-two" aria-hidden="true">✳</span>
+          <span class="hero-sticker" aria-hidden="true">开玩！<span>LET’S PLAY</span></span>
+          <img class="hero-mascot" src="./assets/奶蛙_街机入口.png" alt="黄肚皮、绿眼睛的奶蛙抱着橙色街机摇杆，抬起脚准备开玩" width="1018" height="1544" fetchpriority="high">
+          <span class="floor-sticker" aria-hidden="true">再来一把 ↗</span>
+        </div>
+      </section>
+      <div class="ticket-strip" aria-hidden="true"><span>今天不赶路</span><span>✳</span><span>先玩一小会儿</span><span>✳</span><span>一局接一局</span><span>✳</span><span>今天不赶路</span><span>✳</span><span>先玩一小会儿</span></div>
+      <section class="games-section" id="games" aria-labelledby="games-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">PICK YOUR GAME</p><h2 id="games-title">今天玩哪个<span class="question-mark">？</span></h2></div>
+          <p class="game-count" id="game-count" role="status" aria-live="polite">正在装机…</p>
+        </div>
+        <div class="filter-row" role="group" aria-label="游戏类型">
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">全部游戏 <span>08</span></button>
+          <button class="filter" type="button" data-filter="new" aria-pressed="false">新玩法</button>
+          <button class="filter" type="button" data-filter="classic" aria-pressed="false">经典手感</button>
+        </div>
+        <div class="game-grid" id="game-grid" aria-busy="true"></div>
+        <p class="lobby-note" id="lobby-note" hidden></p>
+        <noscript><p class="lobby-note">开启浏览器 JavaScript 后，即可查看游戏开放状态并开始游玩。</p></noscript>
+      </section>
+    </main>
+    <footer class="footer"><a class="brand" href="#hero-title"><span class="brand-mark" aria-hidden="true">✳</span> 奶蛙游乐场</a><p>非官方同人小游戏 · <a href="./CREDITS.md">素材与玩法参考</a></p><a class="back-top" href="#hero-title" aria-label="回到顶部">↑</a></footer>
+  </div>
+</body>
+</html>

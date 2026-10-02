@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ed6554">
+  <meta name="description" content="用有限弹珠笑醒奶蛙，六盘原创弹珠清钉小游戏。拖动瞄准，松开发射。">
+  <title>弹珠营业中 · 奶蛙小游戏</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="arcade">
+  <header class="masthead">
+    <a class="brand" href="./" aria-label="弹珠营业中首页"><span class="brand-dot">●</span><span>奶蛙小游戏<small>NAIWA · LITTLE ARCADE</small></span></a>
+    <button id="pause" class="quiet" aria-label="暂停与关卡菜单">Ⅱ <span>暂停</span></button>
+  </header>
+  <section class="layout" aria-label="弹珠营业中">
+    <div class="cabinet">
+      <div class="cabinet-title"><h1>弹珠营业中<span class="spark">✦</span></h1><span class="badge">六盘小快乐</span></div>
+      <div class="scoreboard">
+        <span class="level-label"><b id="level-num">01</b><span> / 06</span></span>
+        <div class="goal"><small>还没笑醒</small><b id="remaining">—</b></div>
+        <div class="balls"><small>剩余弹珠</small><b id="balls">—</b></div>
+      </div>
+      <div class="playfield" id="playfield">
+        <canvas id="board" width="480" height="620" tabindex="0" aria-label="弹珠盘面：拖动瞄准，松开发射；键盘左右调整、空格发射。"></canvas>
+        <div class="board-label"><span id="level-title">正在装好弹珠…</span><span id="combo-label"></span></div>
+        <div id="toast" class="toast" aria-live="polite"></div>
+        <div class="loading" id="loading">正在装好弹珠…</div>
+      </div>
+      <div class="controls">
+        <label class="aim-label" for="aim">瞄准 <output id="angle">0°</output></label>
+        <input id="aim" aria-label="发射角度" type="range" min="-68" max="68" step="0.25" value="0">
+        <button id="fire" class="fire">发射 <span>↗</span></button>
+      </div>
+      <div class="hint-row"><span id="hint">拖动瞄准 · 松开发射</span><button id="retry" class="text-button" title="重来本关 (R)">重来 ↻</button></div>
+    </div>
+    <aside class="companion">
+      <div class="side-heading"><span class="eyebrow">今日营业项目</span><p>一发，<br><span>笑一片。</span></p></div>
+      <div class="mascot-wrap"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><canvas id="mascot" width="360" height="420" aria-label="奶蛙发球员"></canvas><span id="mood" class="mood">等你这一发</span></div>
+      <div class="legend">
+        <p><span class="legend-frog">●</span><span><b>笑醒所有奶蛙</b><br>金色小钉是目标，蓝钉帮你弹。</span></p>
+        <p><span class="legend-pad">↔</span><span><b>一组笑醒，软垫转向</b><br>相同标记是一组，软垫翻转 3 秒。</span></p>
+        <p><span class="legend-bucket">∪</span><span><b>落进桶，再送一球</b><br>出手前也能等一等回收桶。</span></p>
+      </div>
+      <p class="key-help">← → 微调 · 空格发射 · P 暂停<br>触屏拖瞄释放 · 全程无声也能玩</p>
+    </aside>
+  </section>
+  <footer><span>小小弹珠，大肚快乐。</span><button id="about" class="text-button">玩法与素材说明</button></footer>
+</main>
+<dialog id="menu" aria-labelledby="dialog-title">
+  <div class="dialog-inner">
+    <span class="eyebrow" id="dialog-tag">休息一下</span>
+    <h2 id="dialog-title">弹珠先停在这里</h2>
+    <p id="dialog-copy"></p>
+    <div id="dialog-actions" class="dialog-actions"></div>
+    <div id="level-picker" class="level-picker" aria-label="选择关卡"></div>
+    <div id="about-copy" class="about-copy" hidden>
+      <p>拖动盘面瞄准，松开发射。也可用下方滑杆与发射按钮，或左右方向键与空格。P / Esc 暂停，R 重来。</p>
+      <p>金色奶蛙钉全醒即过关。每球击中的钉在球结束后移除。同标记的一组全醒，会让对应笑脸软垫翻转 3 秒；回收桶接球返还一球。</p>
+      <p>六盘原创关卡。经典弹珠清钉玩法参考 Peggle；未使用其关卡、美术、音乐或代码。奶蛙形象来自用户提供的角色参考，本作是非官方同人小品；表情图由内置 imagegen 生成。角色权利归相应权利人。</p>
+      <p>无外部依赖、无广告、无登录。进度仅保存在本机浏览器。代码许可由合集维护者统一确定。</p>
+    </div>
+  </div>
+</dialog>
+<noscript>本小游戏需要启用 JavaScript 才能运行。</noscript>
+<script src="levels.js"></script><script src="sim.js"></script><script src="render.js"></script><script src="app.js"></script>
+</body>
+</html>

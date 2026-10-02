@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8efdc"><meta name="description" content="稳住正品，笑着甩走错单。六段订单的奶蛙托盘小游戏。">
+  <title>奶蛙，端稳这桌</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="shell">
+  <header class="masthead"><div><span class="eyebrow">NAIWA'S LITTLE DINER · 06 ORDERS</span><h1>奶蛙，<em>端稳这桌。</em></h1></div><span class="shop-stamp">今日营业<br><b>憋笑限定</b></span></header>
+  <section class="game" aria-label="奶蛙托盘游戏">
+    <div class="order-strip"><div><span id="order-number" class="order-number">开餐前</span><h2 id="order-title">手要稳，笑要准。</h2></div><button id="pause" class="icon-button" disabled aria-label="暂停游戏">Ⅱ</button></div>
+    <div class="hud"><span>正品 <b id="served">0 / 0</b></span><span>回收 <b id="sorted">0 / 0</b></span><span id="mistake-label">失误 <b id="mistakes">0 / 3</b></span><span class="timer"><b id="time">32</b><small> 秒</small></span></div>
+    <div class="board-wrap"><canvas id="board" width="900" height="620" role="img" aria-label="托盘上绿色标记为正品，箭头错单需进入对应回收口；拖动下方支点滑块操作。"></canvas><div class="scene-caption" id="scene-caption">正品稳住 7 秒 · 错单笑着送走</div>
+      <div class="screen" id="screen"><div class="menu-card" id="menu-card"></div></div>
+    </div>
+    <div class="feedback" id="feedback" aria-live="polite">欢迎光临。今天，笑也是一项工作技能。</div>
+    <div class="controls">
+      <div class="balance-control"><div class="control-label"><label for="balance">拖动奶蛙 / 支点</label><button id="center" type="button">回中</button></div><input id="balance" type="range" min="310" max="590" value="450" step="1" aria-label="奶蛙支点位置"><div class="range-hint"><span>移左 → 盘往右低</span><span>盘往左低 ← 移右</span></div><div class="mass-legend">● 盘上绿点 = 物品重心</div></div>
+      <button id="laugh" class="laugh" disabled><span id="laugh-title">笑一下！</span><small>空格 / 点击</small></button>
+    </div>
+    <div class="laugh-status"><span id="laugh-status">憋笑值</span><div class="meter"><i id="meter-fill"></i></div><strong id="laugh-warning">笑一下可清空</strong></div>
+  </section>
+  <footer><details><summary>怎么端好这一桌</summary><p>拖动奶蛙或支点滑块，控制盘子倾斜。<strong>支点移左，右边降低；支点移右，左边降低。</strong>盘上的绿色正品稳住 7 秒就会交付；错单按箭头进入左边厨余口或右边退杯口。</p><p>按「笑一下」震起食物：离支点越远，弹得越高、越远。先把正品放稳，再让错单靠近出口。手指离开滑块后支点会留在原地，单指就能接着按笑。</p><p>憋满会自动连笑三次，提前两秒预告。每段 32 秒；失误三次或收餐时仍有错单，就从本段重来。键盘：← → / A D 移动，↓ 回中，空格笑，P / Esc 暂停，R 重来。</p><p class="rights">非官方同人小游戏。角色依照用户参考生成；角色及素材权利不包含在代码许可中。本作没有声音，也不会请求麦克风。</p></details><button id="menu-button" class="text-button">订单菜单</button></footer>
+</main>
+<script src="sim.js"></script><script src="render.js"></script><script src="app.js"></script>
+</body></html>

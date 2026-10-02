@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#262b31">
+  <meta name="description" content="五幕奶蛙倒放谜题。脚步可以撤回，笑推动的箱子却会留在原地。">
+  <title>这笑能撤回吗 · 奶蛙小剧场</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="levels.js"></script>
+  <script defer src="engine.js"></script>
+  <script defer src="render.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="theater">
+    <header class="masthead">
+      <div class="brand"><span class="record-dot"></span> 奶蛙小剧场 <span class="edition">/ REWIND TAPE 01</span></div>
+      <button id="helpButton" class="text-button" aria-label="查看玩法">玩法 <span>?</span></button>
+    </header>
+    <div class="title-row"><h1>这笑能撤回吗<span>？</span></h1><p>脚步可以撤回。<br>笑出来的祸，留在原地。</p></div>
+
+    <section class="game-shell" aria-label="奶蛙倒放谜题">
+      <div class="tape-head">
+        <div><span class="stage-number" id="stageNumber">序幕</span><h2 id="stageTitle">请奶蛙登台</h2></div>
+        <div class="tape-status"><span id="recordLabel">STANDBY</span><button id="pauseButton" class="icon-button" aria-label="暂停游戏" disabled>Ⅱ</button></div>
+      </div>
+
+      <div class="stage-wrap">
+        <canvas id="stage" width="900" height="650" aria-label="纸布景舞台：使用下方方向按钮移动奶蛙。" tabindex="0"></canvas>
+        <div class="stage-vignette" aria-hidden="true"></div>
+        <div class="stage-legend" aria-label="地图图例"><span>◀◀ 原点</span><span>◌ 目标</span><span>↗ 出口</span><span>× 舞台洞</span></div>
+        <div id="intro" class="intro overlay">
+          <div class="intro-art"><img src="assets/naiwa-idle.png" alt="黄橙色大肚、绿眼睛、表情呆滞的奶蛙"><span class="art-caption">一位不太负责的表演者</span></div>
+          <div class="intro-copy"><span class="eyebrow">五幕 · 一卷可以倒放的录像带</span><h3>人回去了，<br><em>祸还在。</em></h3><p>走到箱子旁边，朝它放声笑。<br>箱子移动一格，倒放只带你回原点。</p><button id="startButton" class="primary-button" disabled>角色正在候场…</button><span class="intro-note">约 3—5 分钟 · 无计时压力 · 全程静音</span><span id="loadMessage" role="status"></span></div>
+        </div>
+        <div id="dialog" class="dialog overlay" hidden role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+          <div class="dialog-card"><span class="eyebrow" id="dialogLabel"></span><h3 id="dialogTitle"></h3><div id="dialogBody"></div><div class="dialog-actions" id="dialogActions"></div></div>
+        </div>
+        <div id="rewindLabel" class="rewind-label" hidden aria-hidden="true">◀◀ 倒放中 <small>道具保持原位</small></div>
+        <div class="film-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div id="liveHud" class="live-hud"><div class="goal"><span class="goal-icon">◇</span><span id="objective">箱子归位，再从出口谢幕</span></div><div class="route-meter"><span>已录</span> <b id="routeCount">00</b><span>步</span></div></div>
+      <div id="narration" class="narration" role="status" aria-live="polite">这里可以重拍，也可以只倒放奶蛙。</div>
+
+      <div id="controls" class="controls" aria-label="游戏控制">
+        <div class="dpad" aria-label="方向控制"><button data-action="up" aria-label="向上移动" class="up">↑</button><button data-action="left" aria-label="向左移动" class="left">←</button><span class="dpad-center" aria-hidden="true">走</span><button data-action="right" aria-label="向右移动" class="right">→</button><button data-action="down" aria-label="向下移动" class="down">↓</button></div>
+        <div class="main-actions"><button data-action="laugh" id="laughButton" class="laugh-button"><strong>哈！放声笑</strong><span>面前箱子推一格 <kbd>空格</kbd></span></button><button data-action="rewind" id="rewindButton" class="rewind-button"><strong>◀◀ 倒放奶蛙</strong><span>沿脚步回原点 <kbd>Z</kbd></span></button></div>
+        <div class="utility-actions"><button data-action="reset" id="resetButton" class="text-button">↺ 整场重拍 <kbd>R</kbd></button><button id="hintButton" class="text-button">看一点提示</button><span class="keyboard-note">方向键 / WASD 移动<br>Esc 暂停</span></div>
+      </div>
+      <nav id="levelNav" class="level-nav" aria-label="五幕选关"></nav>
+    </section>
+    <footer><span>一场关于“只撤回自己”的小闹剧</span><span>同人创作 · 非官方 · <a href="credits.html">素材说明</a></span></footer>
+  </main>
+</body>
+</html>

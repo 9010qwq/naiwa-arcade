@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4ead4"><title>这块地我笑了 · 奶蛙圈地</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <header class="masthead"><div><p class="eyebrow">NAIWA · TABLETOP ARCADE</p><h1>这块地<span>我笑了</span><i>！</i></h1></div><div class="top-actions"><button id="pause" class="small-button" aria-label="暂停游戏">Ⅱ 暂停</button><button id="help" class="small-button" aria-label="查看玩法">？</button></div></header>
+  <div class="level-strip"><span id="level-name">01 / 格纹餐布</span><div class="level-dots" aria-label="三关进度"><i class="active"></i><i></i><i></i></div><span id="record">三张桌面，圈下就归你。</span></div>
+  <section class="play-layout" aria-label="圈地游戏">
+    <div class="board-wrap">
+      <div class="board-hud"><div><span class="muted">已圈下</span> <strong id="percent">0</strong><b>%</b><span class="target"> / <span id="target">60</span>%</span></div><div class="survival"><span id="lives" aria-label="剩余3次机会">● ● ●</span><span id="timer">1:40</span></div></div>
+      <div class="progress-track"><div id="progress"></div><i id="target-marker"></i></div>
+      <div class="board-surface"><canvas id="board" width="800" height="640" tabindex="0" aria-label="圈地场地。方向键或WASD移动，空格大笑，P暂停。触屏可用方向板或滑动。"></canvas><div id="overlay" class="overlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div id="modal-art" class="sticker sticker-idle" aria-hidden="true"></div><p id="modal-kicker" class="eyebrow">一笔圈地 · 三桌挑战</p><h2 id="modal-title">胆子大，地盘大。</h2><div id="modal-copy"></div><button id="primary" class="primary">开始圈地 <span>→</span></button><button id="secondary" class="text-button" hidden>从第一桌开始</button></div></div></div>
+      <div class="board-note"><span class="safe-key"></span> 绿色是安全区 <span class="line-key"></span> 橙线接回才能占地 <span class="enemy-key"></span> 留意巡游方向</div>
+    </div>
+    <aside class="side-panel">
+      <div class="field-note"><span class="note-label">圈地小抄</span><h2>走出去。<br>再接回来。</h2><p>从绿色边缘画线，圈住没有巡游者的地块。</p><div class="doodle" aria-hidden="true"><span>安全边缘</span><svg viewBox="0 0 190 64"><path d="M9 8H180V58H9Z" fill="#bbcca0" stroke="#405c43" stroke-width="2"/><path d="M34 8V44H113V8" fill="#ead48a" stroke="#e58435" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 3"/><path d="M107 19L113 9L119 19" fill="none" stroke="#e58435" stroke-width="3"/><circle cx="154" cy="33" r="7" fill="#78544c"/></svg></div></div>
+      <div class="controls"><div class="direction-area"><p class="control-label">按住方向走 · 松开停</p><div class="dpad" aria-label="方向控制"><button class="up" data-dir="up" aria-label="向上移动">↑</button><button class="left" data-dir="left" aria-label="向左移动">←</button><span class="dpad-center">✦</span><button class="right" data-dir="right" aria-label="向右移动">→</button><button class="down" data-dir="down" aria-label="向下移动">↓</button></div><p class="key-help">方向键 / WASD</p></div><div class="ability-area"><button id="laugh" class="laugh-button" aria-label="释放大笑推开巡游者"><span class="laugh-face">HA!</span><strong>大笑推开</strong><small id="laugh-status">先收集绿色笑气</small></button><p class="key-help">空格 · 冷却 8 秒</p></div></div>
+      <div class="prop-sticker" aria-hidden="true"></div><button id="retry" class="text-button retry-button">↻ 重来这一桌</button>
+    </aside>
+  </section>
+  <div id="notice" role="status" aria-live="polite">前 10 秒巡游者休息，跟着虚线试着圈一小块。</div>
+  <footer><span>非官方同人小游戏 · 无声游玩</span><button id="credits" class="text-button">素材与说明</button></footer>
+</main>
+<script src="core.js"></script><script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{
+  "games": [
+    {
+      "slug": "tray",
+      "ready": true,
+      "action": "稳住正品，把错单笑进回收桶。",
+      "tag": "平衡 · 送餐",
+      "screenshot": "./assets/previews/tray.jpg"
+    },
+    {
+      "slug": "rewind",
+      "ready": true,
+      "action": "奶蛙倒回原地，箱子留在新位置。",
+      "tag": "倒放 · 解谜",
+      "screenshot": "./assets/previews/rewind.jpg"
+    },
+    {
+      "slug": "library",
+      "ready": true,
+      "action": "借噪声笑一场，或者把巡视员引开。",
+      "tag": "憋笑 · 潜行",
+      "screenshot": "./assets/previews/library.png"
+    },
+    {
+      "slug": "relay",
+      "ready": true,
+      "action": "开窗转喇叭，让笑声准时传到屋顶。",
+      "tag": "连锁 · 时机",
+      "screenshot": "./assets/previews/relay.jpg"
+    },
+    {
+      "slug": "pegs",
+      "ready": true,
+      "action": "瞄准一发，弹醒奶蛙，落进桶里再来。",
+      "tag": "经典 · 弹珠",
+      "screenshot": "./assets/previews/pegs.png"
+    },
+    {
+      "slug": "slide",
+      "ready": true,
+      "action": "一路滑到底，用两次急刹收齐点心。",
+      "tag": "经典 · 冰面解谜",
+      "screenshot": "./assets/previews/slide.png"
+    },
+    {
+      "slug": "stack",
+      "ready": true,
+      "action": "看准就落，连着三次精准能稳住笑场。",
+      "tag": "经典 · 叠塔",
+      "screenshot": "./assets/previews/stack.jpg"
+    },
+    {
+      "slug": "territory",
+      "ready": true,
+      "action": "出去画线，再安全回来，把这片圈起来。",
+      "tag": "经典 · 圈地",
+      "screenshot": "./assets/previews/territory.png"
+    }
+  ]
+}

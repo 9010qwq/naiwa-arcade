@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e9efdf"><meta name="description" content="看准坐垫，一键落蛙。12层入门、18层挑战，三连精准稳住笑场。">
+  <title>叠罗汉营业中 · 奶蛙小游戏</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/naiwa-seated.png">
+  <script defer src="core.js"></script><script defer src="game.js"></script>
+</head>
+<body>
+<main class="arcade">
+  <header class="masthead">
+    <div><p class="eyebrow">NAIWA · ONE BUTTON CLUB</p><h1>叠罗汉<span>营业中</span></h1></div>
+    <button id="pause" class="icon-button" aria-label="暂停游戏" disabled>Ⅱ</button>
+  </header>
+  <section class="stage" aria-label="叠塔游戏区域">
+    <canvas id="board" role="img" aria-label="奶蛙叠塔。用空格或下方落下按钮，把移动坐垫对准塔顶。"></canvas>
+    <div id="hud" class="hud" hidden>
+      <div class="level"><strong id="height">0</strong><span> / <b id="target">12</b> 层</span></div>
+      <div class="combo"><span id="combo-text">精准连击</span><div class="dots"><i></i><i></i><i></i></div></div>
+    </div>
+    <div id="notice" class="notice" hidden aria-live="polite"></div>
+    <div id="feedback" class="feedback" aria-live="polite"></div>
+    <div id="menu" class="overlay">
+      <div class="menu-card">
+        <p class="stamp">今日营业 · 笑着往上叠</p>
+        <h2>憋住。<br><em>再落一个。</em></h2>
+        <div class="hero-art"><img src="assets/naiwa-seated.png" alt="捧着大肚子憋笑的奶蛙"><span class="small-bubble">我没笑。</span></div>
+        <p class="intro">坐垫对齐，点一下落下。<br>偏出去的部分会滑走，越叠越窄。</p>
+        <div class="mode-buttons"><button id="intro" class="primary">开叠 · 12 层<span>入门塔</span></button><button id="challenge" class="secondary">挑战 18 层<span>多憋一会儿</span></button></div>
+        <p id="best" class="record">本地纪录 · 等第一座塔开张</p>
+        <button id="rules" class="text-button">怎么玩？</button>
+      </div>
+    </div>
+    <div id="modal" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="dialog-card"><p id="modal-tag" class="stamp"></p><h2 id="modal-title"></h2><p id="modal-copy"></p><div id="modal-extra"></div><button id="modal-primary" class="primary"></button><button id="modal-secondary" class="secondary"></button></div>
+    </div>
+    <div id="load-error" class="overlay" hidden><div class="dialog-card"><h2>奶蛙还没到齐</h2><p>角色图片加载失败，请刷新页面再试。</p><button onclick="location.reload()" class="primary">重新加载</button></div></div>
+  </section>
+  <footer class="controls">
+    <div class="control-row"><button id="restart" class="restart" disabled aria-label="重新开始当前塔">↻<span>重来</span></button><button id="drop" class="drop" disabled><span id="action-label">看准 · 落下</span><span class="key-hint">点屏 / 空格</span></button></div>
+    <p id="hint">三连精准稳两层 · 逢 5 层小心笑场</p>
+  </footer>
+</main>
+<script>document.documentElement.classList.add('js');</script>
+</body></html>
